@@ -1,0 +1,17 @@
+td{
+  padding: 0
+}
+
+.pm0{
+   padding: 0px;
+   margin: 0px;
+}
+
+footer{
+  margin-top:auto;
+}
+
+body{
+  display:flex;
+  flex-direction:column;
+}

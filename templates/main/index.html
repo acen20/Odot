@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+
+<div class="row pm0">
+  <div class="col s12">
+    <form action="/" method="post">
+      {%csrf_token%}
+      <div class="row">
+        <div class="input-field col s10">
+          <input id="list_item1" name = "item" type="text">
+         <label for="list_item1">Type here</label>
+        </div>
+        <div class="input-field col s2">
+          <button class="btn green">Add</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+<div>
+  {% if Exist %}
+    <table class="p0">
+      {% for obj in objs %}
+      <tr>
+        <td><h5>{{obj.text}}</h5></td>
+        <td class="right-align"><p>{{obj.added_date}}</p></td>
+      <tr/>
+      {% endfor %}
+    </table>
+
+  {% endif %}
+
+</div>
+
+{% endblock %}
