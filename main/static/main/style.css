@@ -9,7 +9,10 @@ td{
 
 footer{
   margin-top:auto;
-  padding: 0px;
+}
+
+.page-footer{
+  padding:0px;
 }
 
 body{

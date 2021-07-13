@@ -27,7 +27,7 @@
     <table class="p0">
       {% for obj in objs %}
       <tr>
-        <td><h5>{{obj.text}}</h5></td>
+        <td><h6>{{obj.text | title}}</h6></td>
         <td class="right-align"><p>{{obj.added_date}}</p></td>
       <tr/>
       {% endfor %}
