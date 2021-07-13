@@ -9,9 +9,11 @@ td{
 
 footer{
   margin-top:auto;
+  padding: 0px;
 }
 
 body{
   display:flex;
   flex-direction:column;
+  min-height: 100vh;
 }
