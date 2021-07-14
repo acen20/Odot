@@ -27,8 +27,9 @@ def index(request):
 
 def add_to(request):
     item = request.POST['item']
-    todo = Todo(text = item, added_date = timezone.now())
-    todo.save()
+    if item not in '':
+        todo = Todo(text = item, added_date = timezone.now())
+        todo.save()
     return HttpResponseRedirect(reverse("main:index"))
 
 @csrf_exempt
