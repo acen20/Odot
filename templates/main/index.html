@@ -6,15 +6,15 @@
 
 <div class="row pm0">
   <div class="col s12">
-    <form action="/" method="post">
+    <form action="add_to/" method="post">
       {%csrf_token%}
       <div class="row pm0">
-        <div class="input-field col s10 pm0">
+        <div class="input-field col m11 s10 pm0">
           <input id="list_item1" name = "item" type="text">
          <label for="list_item1">Type here</label>
         </div>
-        <div class="input-field col s1 pm0" style = "margin-top:2px">
-          <button class="btn-floating green"><i class="material-icons">add</i></button>
+        <div class="input-field col s2 m1 right-align" style = "margin-top:10px">
+          <button class="btn-floating green waves-effect waves-light right-align"><i class="material-icons">add</i></button>
         </div>
       </div>
     </form>
@@ -28,7 +28,15 @@
       {% for obj in objs %}
       <tr>
         <td><h6>{{obj.text | title}}</h6></td>
-        <td class="right-align"><p>{{obj.added_date}}</p></td>
+        <!--<td class="right-align"><p>{{obj.added_date.time}}</p></td>-->
+
+        <td class="right-align">
+          <form action="delete_item/{{obj.id}}" method="post">
+            <button type="submit" class="btn waves-red waves-effect waves-light btn-flat">
+            <i class="material-icons">delete</i>
+            </button>
+          </form>
+        </td>
       <tr/>
       {% endfor %}
     </table>
